@@ -26,11 +26,12 @@
     try
     {
         $db = new PDO($dsn, $username, $password);
-        // echo "<p>You are connected to the database</p>";
+        echo "<p>You are connected to the database</p>";
     }
     // Handle PDO exceptions (errors thrown by the PDO library)
     catch (PDOException $e)
     {
+        echo "<p>Database Error!</p>";
         // Call a method from any object,
         // use the object's name followed by -> and then method's name
         // All exception objects provide a getMessage() method that returns the error message
