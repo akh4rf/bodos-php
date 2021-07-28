@@ -12,7 +12,7 @@
     // Else, production
     else {
         // Allow requests from development and production domains
-        header('Access-Control-Allow-Origin: http://hoo-knows.uk.r.appspot.com');
+        header('Access-Control-Allow-Origin: https://main.dnky7jwfbnu0c.amplifyapp.com');
     }
 
     $username = 'admin';
