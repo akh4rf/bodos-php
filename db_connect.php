@@ -6,10 +6,6 @@
     );
     // Check for localhost
     if(in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
-        $username = 'admin';
-        $password = 'Fluffydog12!';
-        $host = 'bodos-bagels.cou7zzrseu9j.us-east-1.rds.amazonaws.com:3306';
-        $dbname = 'bodos_bagels';
         // Allow requests from development and production domains
         header('Access-Control-Allow-Origin: http://localhost:4200');
     }
@@ -19,6 +15,11 @@
         header('Access-Control-Allow-Origin: http://hoo-knows.uk.r.appspot.com');
     }
 
+    $username = 'admin';
+    $password = 'Fluffydog12!';
+    $host = 'bodos-bagels.cou7zzrseu9j.us-east-1.rds.amazonaws.com:3306';
+    $dbname = 'bodos_bagels';
+
     // Create DSN for PDO connection
     $dsn = "mysql:host=$host;dbname=$dbname";
 
@@ -26,12 +27,12 @@
     try
     {
         $db = new PDO($dsn, $username, $password);
-        echo "<p>You are connected to the database</p>";
+        // echo "<p>You are connected to the database</p>";
     }
     // Handle PDO exceptions (errors thrown by the PDO library)
     catch (PDOException $e)
     {
-        echo "<p>Database Error!</p>";
+        // echo "<p>Database Error!</p>";
         // Call a method from any object,
         // use the object's name followed by -> and then method's name
         // All exception objects provide a getMessage() method that returns the error message
